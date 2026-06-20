@@ -115,8 +115,12 @@ export function activate(context: vscode.ExtensionContext): void {
     }
 
     if (choice.id === "browser") {
-      // The page deep-links the token back via the UriHandler above.
-      await vscode.env.openExternal(vscode.Uri.parse(`${webOrigin()}/dev/link?client=vscode`));
+      // The page deep-links the token back via the UriHandler above. Pass this
+      // editor's URI scheme so it works in forks too (Cursor, Windsurf, …).
+      const scheme = encodeURIComponent(vscode.env.uriScheme);
+      await vscode.env.openExternal(
+        vscode.Uri.parse(`${webOrigin()}/dev/link?client=vscode&scheme=${scheme}`),
+      );
       vscode.window.showInformationMessage("Complete sign-in in your browser — VS Code will connect automatically.");
       return;
     }
