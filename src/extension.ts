@@ -164,6 +164,9 @@ export function activate(context: vscode.ExtensionContext): void {
     vscode.commands.registerCommand("opencrater.openDashboard", () =>
       vscode.env.openExternal(vscode.Uri.parse(`${webOrigin()}/dashboard`)),
     ),
+    vscode.commands.registerCommand("opencrater.openPublisher", () =>
+      vscode.env.openExternal(vscode.Uri.parse(`${webOrigin()}/dashboard/packages`)),
+    ),
     vscode.commands.registerCommand("opencrater.openData", () =>
       vscode.env.openExternal(vscode.Uri.parse(`${webOrigin()}/data`)),
     ),

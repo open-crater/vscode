@@ -1,14 +1,14 @@
 {
   "name": "opencrater",
   "displayName": "OpenCrater — Earn AI Compute",
-  "description": "Get paid for the AI coding you already do. Install the SDK, sign up, and track your earned compute — all from VS Code.",
-  "version": "0.1.3",
+  "description": "Get paid for the AI coding you already do — earn AI compute as you code, or real USDC if you maintain a package, MCP server, or AI-agent tool. Sign up, track earnings, and run on your compute, from your editor.",
+  "version": "0.1.4",
   "publisher": "opencrater",
   "private": true,
   "license": "SEE LICENSE IN LICENSE",
   "engines": { "vscode": "^1.85.0" },
   "categories": ["Other", "AI", "Machine Learning"],
-  "keywords": ["ai", "compute", "claude", "codex", "copilot", "cli", "earn", "opencrater", "blip"],
+  "keywords": ["ai", "compute", "claude", "codex", "copilot", "grok", "cli", "mcp", "earn", "usdc", "maintainer", "open-source", "sponsorship", "opencrater", "blip"],
   "icon": "media/icon.png",
   "repository": { "type": "git", "url": "https://github.com/open-crater/vscode" },
   "homepage": "https://opencrater.to",
@@ -36,6 +36,7 @@
       { "command": "opencrater.runCodex", "title": "Run Codex on Compute", "category": "OpenCrater", "icon": "$(play)" },
       { "command": "opencrater.refresh", "title": "Refresh Wallet", "category": "OpenCrater", "icon": "$(refresh)" },
       { "command": "opencrater.openDashboard", "title": "Open Dashboard", "category": "OpenCrater", "icon": "$(dashboard)" },
+      { "command": "opencrater.openPublisher", "title": "Earn USDC With Your Package (Publisher)", "category": "OpenCrater", "icon": "$(package)" },
       { "command": "opencrater.openData", "title": "What We Collect / Don't", "category": "OpenCrater", "icon": "$(shield)" }
     ],
     "menus": {

@@ -52,6 +52,7 @@ export class WalletProvider implements vscode.TreeDataProvider<Row> {
         return [
           { label: "Sign in / sign up", icon: "sign-in", command: "opencrater.signIn" },
           { label: "Install the CLI", icon: "cloud-download", command: "opencrater.installCli" },
+          { label: "Maintain a package? Earn USDC", icon: "package", command: "opencrater.openPublisher", tooltip: "Package, MCP server, or AI-agent tool → earn real USDC, paid every 48h" },
           { label: "What we collect / don't", icon: "shield", command: "opencrater.openData" },
         ];
       case "error":
@@ -64,7 +65,8 @@ export class WalletProvider implements vscode.TreeDataProvider<Row> {
           { label: "Account", description: `${me.displayName} · ${me.trustTier}`, icon: "account" },
           { label: "Run Claude Code on compute", icon: "play", command: "opencrater.runClaude" },
           { label: "Run Codex on compute", icon: "play", command: "opencrater.runCodex" },
-          { label: "Wire AI CLIs (earn)", icon: "plug", command: "opencrater.wireHosts" },
+          { label: "Wire AI CLIs (earn compute)", icon: "plug", command: "opencrater.wireHosts" },
+          { label: "Maintain a package? Earn USDC", icon: "package", command: "opencrater.openPublisher", tooltip: "Package, MCP server, or AI-agent tool → earn real USDC, paid every 48h" },
           { label: "Open dashboard", icon: "dashboard", command: "opencrater.openDashboard" },
           { label: "What we collect / don't", icon: "shield", command: "opencrater.openData" },
         ];
