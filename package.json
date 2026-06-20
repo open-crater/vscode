@@ -1,0 +1,81 @@
+{
+  "name": "opencrater",
+  "displayName": "OpenCrater — Earn AI Compute",
+  "description": "Get paid for the AI coding you already do. Install the SDK, sign up, and track your earned compute — all from VS Code.",
+  "version": "0.1.0",
+  "publisher": "open-crater",
+  "private": true,
+  "license": "SEE LICENSE IN LICENSE",
+  "engines": { "vscode": "^1.85.0" },
+  "categories": ["Other", "AI", "Machine Learning"],
+  "keywords": ["ai", "compute", "claude", "codex", "copilot", "cli", "earn", "opencrater", "blip"],
+  "icon": "media/icon.png",
+  "repository": { "type": "git", "url": "https://github.com/open-crater/vscode" },
+  "homepage": "https://opencrater.to",
+  "bugs": { "url": "https://opencrater.to" },
+  "galleryBanner": { "color": "#0d1117", "theme": "dark" },
+  "main": "./out/extension.js",
+  "activationEvents": ["onStartupFinished", "onUri"],
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        { "id": "opencrater", "title": "OpenCrater", "icon": "media/opencrater.svg" }
+      ]
+    },
+    "views": {
+      "opencrater": [
+        { "id": "opencraterWallet", "name": "Compute Wallet" }
+      ]
+    },
+    "commands": [
+      { "command": "opencrater.signIn", "title": "Sign In / Sign Up", "category": "OpenCrater", "icon": "$(sign-in)" },
+      { "command": "opencrater.signOut", "title": "Sign Out (wallet)", "category": "OpenCrater" },
+      { "command": "opencrater.installCli", "title": "Install the CLI", "category": "OpenCrater", "icon": "$(cloud-download)" },
+      { "command": "opencrater.wireHosts", "title": "Wire AI CLIs (earn)", "category": "OpenCrater", "icon": "$(plug)" },
+      { "command": "opencrater.runClaude", "title": "Run Claude Code on Compute", "category": "OpenCrater", "icon": "$(play)" },
+      { "command": "opencrater.runCodex", "title": "Run Codex on Compute", "category": "OpenCrater", "icon": "$(play)" },
+      { "command": "opencrater.refresh", "title": "Refresh Wallet", "category": "OpenCrater", "icon": "$(refresh)" },
+      { "command": "opencrater.openDashboard", "title": "Open Dashboard", "category": "OpenCrater", "icon": "$(dashboard)" },
+      { "command": "opencrater.openData", "title": "What We Collect / Don't", "category": "OpenCrater", "icon": "$(shield)" }
+    ],
+    "menus": {
+      "view/title": [
+        { "command": "opencrater.refresh", "when": "view == opencraterWallet", "group": "navigation@1" },
+        { "command": "opencrater.signIn", "when": "view == opencraterWallet", "group": "navigation@2" }
+      ]
+    },
+    "configuration": {
+      "title": "OpenCrater",
+      "properties": {
+        "opencrater.apiOrigin": {
+          "type": "string",
+          "default": "https://api.opencrater.to",
+          "description": "OpenCrater API origin (override for self-hosting / staging)."
+        },
+        "opencrater.webOrigin": {
+          "type": "string",
+          "default": "https://opencrater.to",
+          "description": "OpenCrater website origin (sign-in, dashboard, data page)."
+        },
+        "opencrater.pollSeconds": {
+          "type": "number",
+          "default": 90,
+          "minimum": 30,
+          "description": "How often (seconds) to refresh the compute balance."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.4.0"
+  }
+}
