@@ -2,7 +2,7 @@
   "name": "opencrater",
   "displayName": "OpenCrater — Earn AI Compute",
   "description": "Get paid for the AI coding you already do. Install the SDK, sign up, and track your earned compute — all from VS Code.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "opencrater",
   "private": true,
   "license": "SEE LICENSE IN LICENSE",
@@ -19,7 +19,7 @@
   "contributes": {
     "viewsContainers": {
       "activitybar": [
-        { "id": "opencrater", "title": "OpenCrater", "icon": "media/opencrater.svg" }
+        { "id": "opencrater", "title": "OpenCrater", "icon": "media/icon.png" }
       ]
     },
     "views": {
